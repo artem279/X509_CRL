@@ -37,15 +37,14 @@ namespace crl_multithreading
 		
 		public static List<string> GetFileInSubDir(string dir)
 		{
-			string file = "";
+
 			foreach (string f in Directory.GetFiles(dir))
 			{
 				FileInfo fi = new FileInfo(f);
 				if(fi.Extension == ".crl")
 				{
 					Console.WriteLine("Добавляем файл в коллекцию: {0}",f);
-					file = f;
-					files.Add(file);
+					files.Add(f);
 				}
 			}
 			
